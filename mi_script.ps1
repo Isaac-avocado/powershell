@@ -57,3 +57,6 @@ function Animate-Chicks {
 
 # Ejecutar la animación
 Animate-Chicks
+
+git remote add origin https://github.com/Isaac-avocado/powershell.git
+

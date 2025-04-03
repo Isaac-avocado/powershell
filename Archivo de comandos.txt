@@ -1,0 +1,71 @@
+INSTALACIÓN DE POWERSHELL:
+
+winget install --id Microsoft.PowerShell
+
+VERSIÓN DE POWERSHELL:
+
+$PSVersionTable.PSVersion
+
+PRIMEROS COMANDOS:
+
+cd
+ls
+mkdir
+rm
+echo "Hola, mundo"
+
+USO DE GET-COMMAND Y GET-HELP:
+
+Get-Command
+Get-Help
+Get-Help Get-Process -Examples
+Update-Help -UICulture es-MX
+Update-Help -UICulture en-US
+
+VER QUÉ HERRAMIENTAS ESTÁN INSTALADAS
+
+@("python", "node", "java", "git", "npm", "typescript", "bash", "powershell") | ForEach-Object {
+    if (Get-Command $_ -ErrorAction SilentlyContinue) {
+        Write-Output "$_ está instalado"
+    } else {
+        Write-Output "$_ NO está instalado"
+    }
+}
+
+EXECUTIONPOLICY
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Get-ExecutionPolicy
+
+AUTOMATIZAR TAREAS CON SCRIPTS
+
+./mi_script
+
+USO DE GIT DESDE POWERSHELL
+
+git --version
+git init
+git status
+git add .
+git commit -m "Texto del commit"
+git remote add origin https://github.com/tu_usuario/tu_repositorio.git
+
+- Reemplaza tu_usuario y tu_repositorio con los valores de tu repositorio en GitHub.
+
+git push -u origin main
+
+- Reemplaza "main" con "master" dependiendo de tu repositorio en GitHub.
+
+MONITOREO DE PROCESOS Y RENDIMIENTO
+
+Get-Process
+Stop-Process -Name "notepad" -Force
+
+DESCARGA DE ARCHIVOS DESDE INTERNET
+
+Invoke-WebRequest -Uri "https://ejemplo.com/archivo.zip" -OutFile "archivo.zip"
+
+- Uri: La URL del archivo que deseas descargar.
+- OutFile: La ruta en la que deseas guardar el archivo descargado en tu máquina local.
+
+Invoke-WebRequest -Uri "https://github.com/Isaac-avocado/powershell/archive/refs/heads/main.zip" -OutFile "powershell-repo.zip"
